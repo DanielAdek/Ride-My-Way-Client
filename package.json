@@ -1,0 +1,64 @@
+{
+  "name": "ride-my-way-client",
+  "version": "1.0.0",
+  "description": "This platform allows a driver and a passenger to connect each other",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "start:dev": "webpack-dev-server --config=webpack.config.js --hot --open --inline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielAdek/Ride-My-Way-Client.git"
+  },
+  "keywords": [
+    "Ride-My-Way"
+  ],
+  "author": "Daniel Adekunle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielAdek/Ride-My-Way-Client/issues"
+  },
+  "homepage": "https://github.com/DanielAdek/Ride-My-Way-Client#readme",
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.2",
+    "babel-polyfill": "^6.26.0",
+    "compression-webpack-plugin": "^2.0.0",
+    "css-loader": "^1.0.0",
+    "eslint-loader": "^2.1.1",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.20.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-merge": "^4.1.4"
+  }
+}
