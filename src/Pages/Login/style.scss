@@ -1,0 +1,5 @@
+.Container {
+    display: grid;
+    grid-template-rows: 4rem auto fit-content(10rem);
+    height: 100vh;
+}

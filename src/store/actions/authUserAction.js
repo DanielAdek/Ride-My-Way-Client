@@ -4,22 +4,22 @@ import handleError from '../../utils/handleError';
 
 const {
   SET_CURRENT_USER,
-  SIGNUP_PROCESSING,
+  PROCESSING,
   SIGNUP_SUCCESSFUL,
-  SIGNUP_UNSUCCESSFUL
+  PROCESSING_FAILED
 } = constants;
 
 export const setCurrentUser = user => ({
   type: SET_CURRENT_USER,
-  payload: user.data
+  payload: user
 });
 
-export const signupProcessing = () => ({
-  type: SIGNUP_PROCESSING
+export const processing = () => ({
+  type: PROCESSING
 });
 
-export const signupFailed = () => ({
-  type: SIGNUP_UNSUCCESSFUL
+export const processingFailed = () => ({
+  type: PROCESSING_FAILED
 });
 
 const signupSuccessful = user => ({
@@ -32,7 +32,7 @@ export const sampleUser = () => () => {
 };
 
 export const createAccount = (postData, history) => (dispatch) => {
-  dispatch(signupProcessing());
+  dispatch(processing());
   return axios.post('/auth/signup', postData)
     .then((response) => {
       console.log(response.data);
@@ -44,6 +44,24 @@ export const createAccount = (postData, history) => (dispatch) => {
     })
     .catch((error) => {
       handleError(error);
-      dispatch(signupFailed());
+      dispatch(processingFailed());
+    });
+};
+
+
+export const loginUser = (postData, history) => (dispatch) => {
+  dispatch(processing());
+  return axios.post('/auth/login', postData)
+    .then((response) => {
+      console.log(response.data);
+      const user = JSON.stringify(response.data.user);
+      toastr.success(response.data.message);
+      dispatch(setCurrentUser(response.data.user));
+      localStorage.setItem('user', `${user}`);
+      history.push('/create-ride');
+    })
+    .catch((error) => {
+      handleError(error);
+      dispatch(processingFailed());
     });
 };
