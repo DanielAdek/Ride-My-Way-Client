@@ -2,9 +2,9 @@ import constants from '../constants';
 
 const {
   SET_CURRENT_USER,
-  SIGNUP_PROCESSING,
+  PROCESSING,
   SIGNUP_SUCCESSFUL,
-  SIGNUP_UNSUCCESSFUL
+  PROCESSING_FAILED
 } = constants;
 
 const initialState = {
@@ -13,9 +13,8 @@ const initialState = {
   loading: false,
 };
 const authUserReducer = (state = initialState, action) => {
-  console.log(action, '-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-');
   switch (action.type) {
-    case SIGNUP_PROCESSING:
+    case PROCESSING:
       return {
         ...state,
         loading: true
@@ -32,7 +31,7 @@ const authUserReducer = (state = initialState, action) => {
         isAuthenticated: true,
         loading: false,
       };
-    case SIGNUP_UNSUCCESSFUL:
+    case PROCESSING_FAILED:
       return {
         ...state,
         loading: false
