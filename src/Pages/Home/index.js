@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../containers/Header';
 import Button from '../../components/Button';
 
@@ -11,7 +12,6 @@ class Home extends Component {
 
     render() {
       const styleBtn = {
-        // margin: 'auto',
         width: '200px'
       };
       return (
@@ -19,7 +19,9 @@ class Home extends Component {
           <Header />
           <div className={classes.GetStartedSection}>
             <h1>Tap A Button, Ride My Way</h1>
-            <Button styleButton={styleBtn}>GET STARTED</Button>
+            <Link to="/signup">
+              <Button styleButton={styleBtn}>GET STARTED</Button>
+            </Link>
           </div>
         </div>
       );
