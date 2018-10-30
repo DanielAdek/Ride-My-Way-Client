@@ -1,6 +1,23 @@
 .Button {
     padding: 1rem;
-    background: blue;
+    background: #1010d1;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.1rem;
+
+    &:disabled {
+        border-radius: 4px;
+        background-color: #3597f3;
+        border: 0;
+        color: #ccc;
+        font-weight: bold;
+        cursor: progress;
+    }
+}
+
+.Button:focus {
+    outline: none
 }
