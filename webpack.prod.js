@@ -18,6 +18,8 @@ module.exports = merge(common, {
           loader: 'css-loader',
           options: {
             importLoaders: 2,
+            modules: true,
+            localIdentName: '[name]__[local]__[hash:base64:5]'
           }
         },
         {

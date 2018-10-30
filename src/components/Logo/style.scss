@@ -1,0 +1,22 @@
+.logoBrand {
+    animation: showIN 2s ease-in-out 100ms;
+    transform: translate(40px, 0);
+    color: #fff;
+    
+    .logoBrand > h3 a {
+        font-size: 1.5rem;
+    }
+
+    .logoBrand > h3 > i {
+        font-size: 2rem;
+    }
+}
+
+@keyframes showIN {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
