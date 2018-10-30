@@ -1,0 +1,13 @@
+.MainContainer {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('../../static/images/vnicecar.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.GetStartedSection {
+    margin: auto;
+    color: #ffffff;
+}
