@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <style>
     body {margin: 0}
@@ -21,7 +21,11 @@
     <noscript> You need to turn on JavaScript to use this application</noscript>
     <!-- ========================================================= -->
 
+
     <script src="bundle.js"></script>
+
+    <!-- <script src="./Js/map.js"></script> -->
+
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   	crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -29,5 +33,40 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg3cqYRkZWTlyc1bAGwkKJJkyC3E0Pb90&callback=initMap" async
+    defer></script>
+
+    <script>
+    /* eslint-env browser */
+    /** eslint env-browser */
+const divElement = document.querySelector('#map');
+/**
+ * initMap()
+ * @returns {object} BOOLEAN
+ */
+function initMap() {
+  // map center
+  const unilag = {
+    lat: 6.5244,
+    lng: 3.3792
+  };
+
+  // map options
+  const options = {
+    zoom: 6,
+    center: unilag
+  };
+
+  // new map
+  const map = new google.maps.Map(divElement, options);
+
+  // map marker
+  const marker = new google.maps.Marker({
+    position: unilag,
+    map
+  });
+}
+
+    </script>
 </body>
 </html>
