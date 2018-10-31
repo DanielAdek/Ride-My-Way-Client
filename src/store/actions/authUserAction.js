@@ -27,10 +27,6 @@ const signupSuccessful = user => ({
   payload: user
 });
 
-export const sampleUser = () => () => {
-  console.log('Action called!');
-};
-
 export const createAccount = (postData, history) => (dispatch) => {
   dispatch(processing());
   return axios.post('/auth/signup', postData)
@@ -54,9 +50,9 @@ export const loginUser = (postData, history) => (dispatch) => {
   return axios.post('/auth/login', postData)
     .then((response) => {
       console.log(response.data);
-      const user = JSON.stringify(response.data.user);
+      const user = JSON.stringify(response.data.result);
       toastr.success(response.data.message);
-      dispatch(setCurrentUser(response.data.user));
+      dispatch(setCurrentUser(response.data.result));
       localStorage.setItem('user', `${user}`);
       history.push('/create-ride');
     })

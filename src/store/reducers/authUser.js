@@ -22,7 +22,8 @@ const authUserReducer = (state = initialState, action) => {
     case SET_CURRENT_USER:
       return {
         ...state,
-        user: action.payload
+        user: action.payload,
+        isAuthenticated: true,
       };
     case SIGNUP_SUCCESSFUL:
       return {
