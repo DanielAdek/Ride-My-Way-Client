@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "This platform allows a driver and a passenger to connect each other",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "node server.js",
     "heroku-postbuild": "rimraf dist && npm run build",
     "webpack": "webpack-dev-server --mode development --open --hot",
     "start:dev": "webpack-dev-server --config=webpack.config.js --hot --open --inline",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --env=jsdom --verbose",
+    "test:watch": "jest --watchAll --verbose"
   },
   "repository": {
     "type": "git",
@@ -31,6 +35,8 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
@@ -50,6 +56,8 @@
     "babel-polyfill": "^6.26.0",
     "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "eslint-loader": "^2.1.1",
     "express": "^4.16.4",
     "file-loader": "^2.0.0",
